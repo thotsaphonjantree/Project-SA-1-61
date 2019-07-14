@@ -1,0 +1,46 @@
+<app-toolbar></app-toolbar>
+<mat-card class="example-card">
+  <div align="center">
+    <mat-card-title><h3>ลงทะเบียนร้านอาหาร</h3></mat-card-title>
+    <mat-form-field>
+      <input matInput placeholder="ชื่อร้านอาหาร" [(ngModel)]="rname" >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="เบอร์โทรศัพท์ร้านอาหาร" [(ngModel)]="rtel" >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="ที่อยู่ร้านอาหาร" [(ngModel)]="packAddress.addressSelect"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <mat-select placeholder="ประเภทร้าน" [(ngModel)]="catego">
+      <mat-option *ngFor="let cate of category" [value]="cate.cid"   >
+        {{cate.categoryName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="input your picture" [(ngModel)]="packAddress.picurl" ></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+  <mat-select placeholder="เมนูแนะนำ" [(ngModel)]="menus" >
+    <mat-option *ngFor="let menui of menu" [value]="menui.menuId"  >
+      {{menui.menuName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-select placeholder="เจ้าของร้าน" [(ngModel)]="owa" name="username">
+        <mat-option [value]="memberLogin.mid">{{memberLogin.username}}</mat-option>
+        </mat-select>
+  </mat-form-field>
+      <div align="right">
+      <button mat-flat-button (click)="save()" color="primary">Save</button>
+    </div>
+
+    
